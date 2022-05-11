@@ -15,4 +15,5 @@ export default defineConfig({
     outDir: "docs",
     assetsDir: "",
   },
+  base: "/aripova/",
 });
