@@ -30,7 +30,9 @@ export default {
       if (!this.answers[index]) {
         return 0;
       }
-      return Math.floor((this.answers[index] * 100) / this.test.Results.length);
+      return Math.floor(
+        (this.answers[index] * 100) / this.test.Questions.length
+      );
     },
     results() {
       return this.test.Results.sort((a, b) => {
@@ -56,7 +58,7 @@ export default {
       return this.question > 0 && !this.done;
     },
     done() {
-      return this.question >= this.test.Questions.length;
+      return this.question > this.test.Questions.length;
     },
     ready() {
       let sum = 0;
@@ -89,7 +91,7 @@ main(v-if="processed")
 
 main(v-if="done")
   h2 Результаты тестирования
-  article(v-for="a, ai in results()")
+  article(v-for="a in results()")
     h3 {{ percent(a.Result) }}% – {{ a.Title }}
     p {{ a.Text }}
 </template>
