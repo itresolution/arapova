@@ -74,7 +74,7 @@ export default {
 <template lang="pug">
 header
   h1 Ведущие мотивы трудовой деятельности
-  p Арипова М. С.
+  p Арапова М. С.
 
 main(v-if="opened")
   button(@click="start") Начать тестирование
